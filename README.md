@@ -31,7 +31,7 @@ import numpy as np
 n = 10
 x0 = 5.*np.ones(n)
 
-# Define Rastrigin-type function and gradient
+# define Rastrigin-type function and gradient
 f = lambda x: 2.*n + np.sum(x**2 - 2.*np.cos(2.*np.pi*x), axis=0)
 gf = lambda x: 2*x + 4.*np.pi*np.sin(2.*np.pi*x)
 
