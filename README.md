@@ -8,8 +8,9 @@
 **pynlqn** is a `Scipy`-based Python implementation of an experimental
 non-local Newton method.
 
-- [**Installation**](https://github.com/NiMlr/traffic-model-synthesis#installation)
-- [**Usage Tutorial**](https://github.com/NiMlr/traffic-model-synthesis#usage-tutorial)
+- [**Installation**](https://github.com/NiMlr/pynlqn#installation)
+- [**Usage Tutorial**](https://github.com/NiMlr/pynlqn#usage-tutorial)
+- [**How to Cite**](https://github.com/NiMlr/pynlqn#how-to-cite)
 
 ### Installation
 
