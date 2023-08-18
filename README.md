@@ -1,4 +1,4 @@
-<a href="https://github.com/NiMlr/pynlqn>
+<a href="https://github.com/NiMlr/pynlqn">
   <img align="right" width="150" height="150" src="https://github.com/mdp-toolkit/mdp-toolkit/assets/39880630/9795e7ca-35aa-4191-bd07-60e10b5438c1"><br>
 </a>
 
