@@ -53,7 +53,7 @@ pynlqn.nlqn(f, gf, x0, sigma0, k, C, verbose=False)
 
 ### How to Cite
 
-If you use `pynlqn` in your research, please consider citing the associated [paper](https://arxiv.org/abs/xxxxxx).
+If you use `pynlqn` in your research, please consider citing the associated [paper](https://arxiv.org/abs/2308.09556).
 
 ```bibtex
 @misc{müller2023principle,
