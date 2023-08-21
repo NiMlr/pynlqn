@@ -56,11 +56,11 @@ pynlqn.nlqn(f, gf, x0, sigma0, k, C, verbose=False)
 If you use `pynlqn` in your research, please consider citing the associated [paper](https://arxiv.org/abs/xxxxxx).
 
 ```bibtex
-@misc{müller2023nonlocal,
+@misc{müller2023principle,
       title={A Principle for Global Optimization with Gradients}, 
       author={Nils Müller},
       year={2023},
-      eprint={xxxxxx},
+      eprint={2308.09556},
       archivePrefix={arXiv},
       primaryClass={math.OC}
 }
