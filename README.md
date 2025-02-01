@@ -22,7 +22,7 @@ pip install git+https://github.com/NiMlr/pynlqn
 
 ### Usage Tutorial
 
-Try to optimize a function with many suboptimal local minima using a non-local quasi newton method [`nlqn`](https://github.com/NiMlr/pynlqn/blob/0a54df2b5b0882a22249f35cafe29013bb2ae380/pynlqn/algorithms.py#L62).
+Try to optimize a function with many suboptimal local minima using a non-local quasi newton method [`pynlqn.nlqn`](https://github.com/NiMlr/pynlqn/blob/0a54df2b5b0882a22249f35cafe29013bb2ae380/pynlqn/algorithms.py#L62).
 ```python
 import pynlqn
 import numpy as np
@@ -50,7 +50,7 @@ pynlqn.nlqn(f, gf, x0, sigma0, k, C, verbose=False)
 #        -7.45285151e-10, -6.81223695e-10])
 ```
 
-Try to optimize the same function using [sharpness aware minimization](https://arxiv.org/abs/2010.01412) [`sam`](https://github.com/NiMlr/pynlqn/blob/0a54df2b5b0882a22249f35cafe29013bb2ae380/pynlqn/algorithms.py#L126).
+Try to optimize the same function using [sharpness aware minimization](https://arxiv.org/abs/2010.01412) [`pynlqn.sam`](https://github.com/NiMlr/pynlqn/blob/0a54df2b5b0882a22249f35cafe29013bb2ae380/pynlqn/algorithms.py#L126).
 
 ```python
 import pynlqn
