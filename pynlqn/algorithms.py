@@ -190,4 +190,4 @@ def sam(f, gf, x0, sigma, eta, C, verbose=True):
         if verbose:
             print(f"f-val: {fxprime}  // budget: {C-t}")
 
-    return xprime, fxprime
+    return xprime
