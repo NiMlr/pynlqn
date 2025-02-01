@@ -122,3 +122,72 @@ def nlqn(f, gf, x0, sigma0, k, C, linesearch=_linesearch, scaling=_scaling, verb
             print(f"f-val: {fxprime}  //  sigmat: {sigmat} // budget: {C}")
 
     return xt
+
+def sam(f, gf, x0, sigma, eta, C, verbose=True):
+    """Sharpness-Aware Minimization for optimization of high-dimensional
+    differentiable functions with many suboptimal local minima.
+        
+    Take gradient steps on minimal values of linear approximants.
+  
+    Args:
+        f (function): Continuously differentiable objective function
+        mapping |R^n -> |R. Must be vectorized, i.e., accept input of
+        shape `(n, m)`, where `m` is a number of evaluation points.
+
+        gf (function): Function returning the gradient of `f`.
+        Must be vectorized, i.e., accept input of
+        shape `(n, m)`, where `m` is a number of evaluation points.
+        Must return output of shape `(n,m)`.
+
+        x0 (np.ndarray): Initial point in |R^n.
+
+        sigma (float): Scaling in (0, infty).
+
+        eta (float): Step-size in (0, infty).
+
+        C (int): Total evaluation budget counting gradient and function
+        evaluations separate and equally.
+
+        verbose (bool): Whether to print optimization progress at each
+        iteration.
+
+    Returns:
+        np.ndarray:
+        A point in |R^n that has the lowest found objective value.
+
+    .. _Sharpness-Aware Minimization for Efficiently Improving Generalization:
+        https://arxiv.org/pdf/2010.01412
+    """
+    xt = x0.copy()
+    fxprime = f(x0)
+    xprime = x0.copy()
+    n = len(x0)
+    gxt = np.zeros(n)
+    eps = np.zeros(n)
+    g = np.zeros(n)
+
+    t = 1
+    while C > t:
+        # compute local maximal direction
+        gxt[:] = gf(xt)
+        # compute local maximal point
+        eps[:] = gxt
+        eps /= np.linalg.norm(gxt)
+        eps *= sigma
+        eps += xt
+        # compute gradient at local maximal point
+        g[:] = gf(eps)
+        # take a step in that direction
+        xt -= eta*g
+        # update best guess
+        fc = f(xt)
+        if fc < fxprime:
+            xprime[:] = xt
+            fxprime = fc
+        # count evaluations
+        t += 3
+
+        if verbose:
+            print(f"f-val: {fxprime}  // budget: {C-t}")
+
+    return xprime, fxprime

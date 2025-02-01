@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pynlqn',
-      version='0.1',
+      version='0.2',
       description='A non-local quasi-newton method for global optimization.',
       url='http://github.com/NiMlr/pynlqn',
       author='Nils Müller',
